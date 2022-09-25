@@ -1,12 +1,12 @@
 ## Matching Policies
 The code includes Python code for the OR paper "Dynamic Stochastic Matching Under Limited Time". 
 
-Link to paper: https://pubsonline.informs.org/doi/epdf/10.1287/opre.2022.2293
+Link to paper: https://pubsonline.informs.org/doi/epdf/10.1287/opre.2022.2293.
 
 "matching_policies.py" containts the Python class "simulation" used to run the algorithms for the case study in the paper. This class supports the following methods that are used to create the objects to be used by the matching algorithms:
 
- * \_\_init\_\_(): Initializes the class "simulation"
- * generate_input(): Calculates the cbar values for every type as explained in Appendix E.3 via the method initial_cbar() and the data files  
+ * \_\_init\_\_(): Initializes the class "simulation".
+ * generate_input(): Calculates the cbar values for every type as explained in Appendix E.3 via the method initial_cbar() and the data files.
  "ClusteredInput....feather" and "TypeCoordinate....feather". Then, prepares the time data for arrivals that will be used by the algorithms. Finally, calculates the minimum distance required to satisfy two rides in one route via the method MinDist().  
 init_simulation(): Calculates departure times due to abandonment by generating exponentially distributed waiting times. 
  * MinDist(): Uses the data "TypePairDistance....csv" that contains the distance between every type pair to create the "attributes_graph....txt" and the "edges_graph....txt". Then creates the networkx graph that will be used in relation with gurobipy to run the algorithms.  
