@@ -23,4 +23,6 @@ The following methods of the class "simulation" run the matching algorithms:
  * Gurobi_LP_policy(): Runs the LP policy in the paper using the Gurobi Solver. 
  * Gurobi_batching_policy(): Runs the batching policy using the Gurobi Solver.
 
+## Run File 
 
+The code "RunFile.py" includes a sample code to run the algorithms in the case study of the paper.
