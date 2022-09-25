@@ -175,7 +175,7 @@ class simulation(object):
                        dates=['07/01/2013','14/01/2013','21/01/2013','28/01/2013','04/02/2013','11/02/2013','18/02/2013','25/02/2013'],\
                        times=['07:30:00','08:00:00']): # Default: 6 Mondays 7:30-8:00
         
-        self.df=feather.read_dataframe('C:/Users/osaritac/Dropbox/Data/ClusteredInput'+self.path+'.feather')    
+        self.df=feather.read_dataframe('SampleData/ClusteredInput'+self.path+'.feather')    
         self.df = self.df.sort_values(by=['Date','ArrivalTimes'])
         
         self.dates=dates
@@ -195,7 +195,7 @@ class simulation(object):
         self.cbar_date_string=reduce(lambda x,y: x +y[0]+y[1]+'_'+y[3]+y[4]+'_',cbar_dates,'')
         ###########################################################
         
-        self.type_coord_df=feather.read_dataframe('C:/Users/osaritac/Dropbox/Data/TypeCoordinate'+self.path+'.feather')
+        self.type_coord_df=feather.read_dataframe('SampleData/TypeCoordinate'+self.path+'.feather')
         self.type_coord_df = self.type_coord_df.sort_values(by=['ID'])
         
         self.Ox_=np.array(self.df['pickup_longitude'])
@@ -241,10 +241,10 @@ class simulation(object):
         self.MinDist()
         
         batch_count=1
-        while os.path.isdir('C:/Users/osaritac/Dropbox/SimulationResults/Batch'+str(batch_count)+'_cd_'+str(self.cd)+'_mu_'+str(self.mu)+self.path):
+        while os.path.isdir('SampleData/Batch'+str(batch_count)+'_cd_'+str(self.cd)+'_mu_'+str(self.mu)+self.path):
             batch_count+=1
         
-        self.batch_path='C:/Users/osaritac/Dropbox/SimulationResults/Batch'+str(batch_count)+'_cd_'+str(self.cd)+'_mu_'+str(self.mu)+self.path
+        self.batch_path='SampleData/Batch'+str(batch_count)+'_cd_'+str(self.cd)+'_mu_'+str(self.mu)+self.path
         os.mkdir(self.batch_path)
         
     def MinDist(self):
@@ -266,7 +266,7 @@ class simulation(object):
             attributes_type_graph=dict()
             edges_type_graph=list()
             #read type pair distances 
-            df0=feather.read_dataframe('C:/Users/osaritac/Dropbox/Data/TypePairDistance'+self.path+'.feather')
+            df0=feather.read_dataframe('SampleData/TypePairDistance'+self.path+'.feather')
             for i in range(df0.shape[0]):            
                 df=df0.iloc[i,:]
                 ID1=int(df['ID1'])
@@ -312,7 +312,7 @@ class simulation(object):
     def initial_cbar(self,times,dates):
         date_string=reduce(lambda x,y: x +y[0]+y[1]+'_'+y[3]+y[4]+'_',dates,'')
         
-        df_for_cbar=feather.read_dataframe('C:/Users/osaritac/Dropbox/Data/ClusteredInput'+self.path+'.feather')
+        df_for_cbar=feather.read_dataframe('SampleData/ClusteredInput'+self.path+'.feather')
         df_for_cbar=df_for_cbar[df_for_cbar['Date'].isin(dates)]
         df_for_cbar=df_for_cbar[(df_for_cbar['ArrivalTimes']<=times[1]) & (df_for_cbar['ArrivalTimes']>=times[0])]
         
@@ -331,7 +331,7 @@ class simulation(object):
         
         try: #load cbar
             self.cbar = ''
-            with open(r'selfcbar_from_'+str(hour_1)+str(minute_1)+str(second_1)+'_to_'+str(hour_2)+str(minute_2)+str(second_2) +'_dates_' + date_string\
+            with open(r'SampleData/selfcbar_from_'+str(hour_1)+str(minute_1)+str(second_1)+'_to_'+str(hour_2)+str(minute_2)+str(second_2) +'_dates_' + date_string\
                       +'_mu'+str(self.mu)+'_cd'+str(np.abs(self.cd))+'_trip_neutral.txt','r') as f:
                 for i in f.readlines():
                     cbar=i #string
@@ -368,7 +368,7 @@ class simulation(object):
                 print('self.cbar array is: ',self.cbar)
 
             #save cbar
-            with open(r'selfcbar_from_'+str(hour_1)+str(minute_1)+str(second_1)+'_to_'+str(hour_2)+str(minute_2)+str(second_2) +'_dates_' + date_string\
+            with open(r'SampleData/selfcbar_from_'+str(hour_1)+str(minute_1)+str(second_1)+'_to_'+str(hour_2)+str(minute_2)+str(second_2) +'_dates_' + date_string\
                       +'_mu'+str(self.mu)+'_cd'+str(np.abs(self.cd))+'_trip_neutral.txt','w+') as f:
                 f.write(str(self.cbar))
                
