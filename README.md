@@ -20,9 +20,14 @@ The following methods are used for fast computation of the cbar values that are 
 The following methods of the class "simulation" run the matching algorithms:
 
  * threshold_policy(): Runs the threshold policy in the paper and writes the results to a csv file "ResultFrame_Threshold....csv".
- * Gurobi_LP_policy(): Runs the LP policy in the paper using the Gurobi Solver and write the results to a csv file "ResultFrame_Gurobi_LP....csv".
- * Gurobi_batching_policy(): Runs the batching policy using the Gurobi Solver write the results to a csv file "ResultFrame_Gurobi_Batching....csv".
+ * Gurobi_LP_policy(): Runs the LP policy in the paper using the Gurobi Solver and writes the results to a csv file "ResultFrame_Gurobi_LP....csv".
+ * Gurobi_batching_policy(): Runs the batching policy using the Gurobi Solver and writes the results to a csv file "ResultFrame_Gurobi_Batching....csv".
 
 ## Run File 
 
 The code "RunFile.py" includes a sample code to run the algorithms in the case study of the paper.
+
+##Dependencies
+
+
+
