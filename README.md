@@ -27,7 +27,7 @@ The following methods of the class "simulation" run the matching algorithms:
 
 The code "RunFile.py" includes a sample code to run the algorithms in the case study of the paper.
 
-##Dependencies
+## Dependencies
 
-
+The codes are run on Python 3.7. They require the following packages: numpy, networkx, pandas, functools, copy, gurobipy, plotly.graph_objects,feather, pickle, glob, numba, datetime, os
 
