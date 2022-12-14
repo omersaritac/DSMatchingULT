@@ -29,7 +29,7 @@ The code "RunFile.py" includes a sample code to run the algorithms in the case s
 
 ## Dependencies
 
-The codes are run on Python 3.7. They require the following packages (TODO add versions): 
+The codes are run on Python 3.7. They require the following packages: 
 
 `numpy==1.16.2` 
 `networkx==2.2`
