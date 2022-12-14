@@ -31,17 +31,14 @@ The code "RunFile.py" includes a sample code to run the algorithms in the case s
 
 The codes are run on Python 3.7. They require the following packages (TODO add versions): 
 
-`numpy==` 
-`networkx==`
-`pandas==` 
-`functools==` 
-`copy==` 
-`gurobipy==` 
-`plotly.graph_objects==`
-`feather==` 
-`pickle==`
-`glob==` 
-`numba==`
-`datetime==`
-`os==`
+`numpy==1.16.2` 
+`networkx==2.2`
+`pandas==0.24.2` 
+`gurobipy==8.1.1` 
+`plotly==4.1.0`
+`feather==0.4.0 ` 
+`pickle==4.0`
+`glob==0.6` 
+`numba==0.43.1`
+
 
